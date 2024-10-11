@@ -234,8 +234,9 @@ header {
 }
 
 .home-title {
-  font-family: 'Anton', sans-serif;
-  color: #043d77;
+  font-family: 'Poppins', sans-serif;
+  color: #111;
+  font-weight: 800;
   font-size: 3em;
   margin-bottom: 10px;
 }
@@ -243,13 +244,14 @@ header {
 .home-description {
   font-size: 1.1em;
   margin-bottom: 20px;
+  color: #032241;
 }
 
 .home-button {
   position: relative;
   font-size: 1.2em;
   padding: 10px 20px;
-  background: #fa0c0c;
+  background: #f59e0b;
   color: #111;
   border: 2px solid transparent;
   border-radius: 8px;
@@ -262,7 +264,7 @@ header {
 }
 
 .home-button:hover {
-  background: #bd5151;
+  background: #f3ca61;
   transform: scale(1.05);
   box-shadow: 0 8px 12px rgba(0, 0, 0, 0.25);
   border-color: #fff;
@@ -291,7 +293,67 @@ header {
   display: flex;
   flex-direction: column;
   height: auto;
-  
+}
+
+.vision-mission {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  background: linear-gradient(to right, #007bff,  #09478a);
+  padding: 50px;
+  overflow: hidden;
+  height: auto; 
+}
+
+.vision-mission::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  z-index: 0;
+}
+
+.vision, .mission {
+  position: relative;
+  z-index: 1;
+  background: rgb(248, 243, 243);
+  border-radius: 10px;
+  padding: 15px 20px 20px 20px;
+  max-width: 900px;
+  width: 100%;
+}
+
+.mission-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.mission-list li {
+  counter-increment: list-counter;
+  position: relative;
+  padding-left: 40px;
+  margin-bottom: 10px;
+}
+
+.mission-list li::before {
+  content: counter(list-counter);
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 30px;
+  height: 30px;
+  background-color: #007bff;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .section-title {
@@ -300,12 +362,13 @@ header {
   font-size: 2.5rem;
   color: #111;
   margin-bottom: 15px;
+  display: inline-block;
 }
 
 .section-title::after {
   content: "";
   display: block;
-  width: 45%;
+  width: 110%;
   height: 3px;
   background-color: #0783ff;
   position: absolute;
@@ -958,6 +1021,12 @@ footer {
   border-radius: 10px;
 }
 
+.visi-text{
+  font-size: 1.1em;
+  font-weight: 700;
+  text-align: center;
+}
+
 
 @media screen and (max-width: 768px) {
   .navbar {
@@ -1260,5 +1329,13 @@ footer {
 
   .content a{
     margin-top: 30px;
+  }
+
+  .vision-mission{
+    padding: 20px;
+  }
+
+  .vision{
+    padding-top: 0;
   }
 }
